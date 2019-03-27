@@ -28,9 +28,9 @@ enable-gtid = false
 
 [from]
 host = "127.0.0.1"
-user = "root"
-password = "Up8156jArvIPymkVC+5LxkAT6rek"
 port = 3306
+user = "root"
+password = "VjX8cEeTX+qcvZ3bPaO4h0C80pe/1aU="
 
 #relay log purge strategy
 #[purge]
