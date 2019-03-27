@@ -28,11 +28,11 @@ spec:
         - name: mysqldata
           mountPath: /var/lib/mysql
         - name: mysql-config-volume
-          mountPath: /etc/mysql/conf.d/my.custom.cnf
-  volumes:
-  - name: mysql-config-volume
-    configMap:
-      name: mysql-custom-config
+          mountPath: /etc/mysql/conf.d
+      volumes:
+      - name: mysql-config-volume
+        configMap:
+          name: mysql-custom-config
   volumeClaimTemplates:
   - metadata:
       name: mysqldata
