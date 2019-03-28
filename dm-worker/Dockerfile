@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 RUN apk update && apk add --no-cache wget bash sed
 
-ENV HOMEDIR /home
+ENV HOMEDIR /home/tidb
 
 RUN mkdir -p $HOMEDIR $HOMEDIR/log $HOMEDIR/bin $HOMEDIR/conf
 

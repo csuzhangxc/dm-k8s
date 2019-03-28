@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: dm-worker
+  namespace: dm-test
+spec:
+  selector:
+    matchLabels:
+      app: dm-worker
+  serviceName: "dm-worker"
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dm-worker
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: dm-worker
+        image: dm-worker:v1
+        ports:
+        - containerPort: 8262
+          name: dm-worker
+        volumeMounts:
+        - name: dm-worker-data
+          mountPath: /home/tidb
+        env:
+        - name: MYSQL_IPS
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-ips-config
+              key: mysql-ips
+  volumeClaimTemplates:
+  - metadata:
+      name: dm-worker-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 200Gi
+      storageClassName: local-storage
