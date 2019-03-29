@@ -1,0 +1,12 @@
+# Master Configuration.
+
+# log configuration
+log-level = "info"
+
+# log file path
+log-file = "./log/dm-master.log"
+
+# dm-master listen address
+master-addr = ":8261"
+
+

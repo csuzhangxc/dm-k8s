@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: dm-master
+  namespace: dm-test
+spec:
+  selector:
+    matchLabels:
+      app: dm-master
+  serviceName: "dm-master"
+  template:
+    metadata:
+      labels:
+        app: dm-master
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: dm-master
+        image: hub.pingcap.net/dm/dm-master:v1.0.0
+        ports:
+        - containerPort: 8261
+          name: dm-master
+        env:
+        - name: DM_WORKERS
+          valueFrom:
+            configMapKeyRef:
+              name: dm-worker-config
+              key: DM_WORKERS
