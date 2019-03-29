@@ -5,7 +5,7 @@ config="conf/dm-worker.toml"
 
 # we hack here, each dm-worker-<index> connects to mysql-<index>
 index=${hostname##*-}
-mysql_host=$(echo $MYSQL_IPS | grep "mysql-${index}" | awk '{print $2}')
+mysql_host=$(echo $MYSQL_IPS | tr " " "\n" | grep "mysql-${index}" | awk -F ',' '{print $2}')
 
 # step.1 replace some dynamic variables
 sed -i "s/^source-id = .*$/source-id = \"${hostname}\"/" $config

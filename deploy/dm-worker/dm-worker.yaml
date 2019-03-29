@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: dm-worker
-        image: hub.pingcap.net/dm/dm-worker:v1
+        image: hub.pingcap.net/dm/dm-worker:v1.0.0
         ports:
         - containerPort: 8262
           name: dm-worker
