@@ -1,11 +1,13 @@
 [mysqld]
-server-id=101
+server-id = 101
 max_connections = 1000
-binlog_format=row
-enforce_gtid_consistency=ON
-gtid-mode=ON
-datadir=/var/lib/mysql/
-general_log_file=/var/lib/mysql/mysql-general.log
-slow_query_log=/var/lib/mysql/mysql-slow.log
-innodb_flush_log_at_trx_commit=0
-sync_binlog=0
+log-bin = bin.log
+log-bin-index = bin-log.index
+binlog_format = row
+enforce_gtid_consistency = ON
+gtid-mode = ON
+datadir = /var/lib/mysql/
+general_log_file = /var/lib/mysql/mysql-general.log
+slow_query_log = /var/lib/mysql/mysql-slow.log
+innodb_flush_log_at_trx_commit = 0
+sync_binlog = 0
