@@ -16,9 +16,10 @@ RUN cd /tmp && \
 
 COPY ./dm-worker.toml $HOMEDIR/conf/dm-worker.toml
 COPY ./run-dm-worker.sh $HOMEDIR/bin/run-dm-worker.sh
+RUN chmod a+x $HOMEDIR/bin/run-dm-worker.sh
 
 WORKDIR $HOMEDIR
 
 EXPOSE 8262
 
-ENTRYPOINT [ "bin/run-dm-worker.sh" ]
+ENTRYPOINT [ "./bin/run-dm-worker.sh" ]

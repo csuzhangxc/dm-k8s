@@ -17,19 +17,19 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: dm-worker
-        image: dm-worker:v1
+        image: hub.pingcap.net/dm/dm-worker:v1
         ports:
         - containerPort: 8262
           name: dm-worker
         volumeMounts:
         - name: dm-worker-data
-          mountPath: /home/tidb
+          mountPath: /home/tidb/relay_log
         env:
         - name: MYSQL_IPS
           valueFrom:
             configMapKeyRef:
               name: mysql-ips-config
-              key: mysql-ips
+              key: MYSQL_IPS
   volumeClaimTemplates:
   - metadata:
       name: dm-worker-data
