@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: grafana
+  namespace: dm-test
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  serviceName: "grafana"
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: grafana
+        image: hub.pingcap.net/dm/grafana:v1.0.0
+        ports:
+        - containerPort: 3000
+          name: grafana
+        volumeMounts:
+        - name: grafana-data
+          mountPath: /home/tidb/data.grafana
+        env:
+        - name: PROMETHEUS_IP
+          valueFrom:
+            configMapKeyRef:
+              name: prometheus-ip-config
+              key: PROMETHEUS_IP
+  volumeClaimTemplates:
+  - metadata:
+      name: grafana-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 200Gi
+      storageClassName: local-storage
