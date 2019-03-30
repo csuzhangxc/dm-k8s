@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: prometheus
+  namespace: dm-test
+spec:
+  selector:
+    matchLabels:
+      app: prometheus
+  serviceName: "prometheus"
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: prometheus
+        image: hub.pingcap.net/dm/prometheus:v1.0.0
+        ports:
+        - containerPort: 8262
+          name: prometheus
+        volumeMounts:
+        - name: prometheus-data
+          mountPath: /home/tidb/data
+        env:
+        - name: MYSQL_IPS
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-ips-config
+              key: MYSQL_IPS
+  volumeClaimTemplates:
+  - metadata:
+      name: prometheus-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 200Gi
+      storageClassName: local-storage
