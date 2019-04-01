@@ -12,7 +12,15 @@ RUN cd /tmp && \
     cd dm-latest-linux-amd64 && \
     cp bin/dm-worker $HOMEDIR/bin && \
     cp bin/dm-master $HOMEDIR/bin && \
-    cp bin/dmctl $HOMEDIR/bin
+    cp bin/dmctl $HOMEDIR/bin && \
+    cd .. && \
+    rm -rf dm-latest-linux-amd64.tar.gz dm-latest-linux-amd64
+
+RUN cd /tmp && \
+    wget http://download.pingcap.org/mydumper-linux-amd64.tar.gz && \
+    tar xvzf mydumper-linux-amd64.tar.gz && \
+    cp mydumper-linux-amd64/bin/mydumper $HOMEDIR/bin && \
+    rm -rf mydumper-linux-amd64.tar.gz mydumper-linux-amd64
 
 COPY ./dm-worker.toml $HOMEDIR/conf/dm-worker.toml
 COPY ./run-dm-worker.sh $HOMEDIR/bin/run-dm-worker.sh
