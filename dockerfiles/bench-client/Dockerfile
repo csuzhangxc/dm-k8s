@@ -14,4 +14,8 @@ RUN cd /tmp && \
     make data-dam && \
     cp bin/data-dam $HOMEDIR/bin
 
+COPY ./data-dam.toml $HOMEDIR/conf/data-dam.toml
+COPY ./run-data-dam.sh $HOMEDIR/bin/run-data-dam.sh
+RUN chmod a+x $HOMEDIR/bin/run-data-dam.sh
+
 WORKDIR $HOMEDIR

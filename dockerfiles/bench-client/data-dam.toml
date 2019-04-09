@@ -1,0 +1,14 @@
+# Data-Dam Configuration
+
+rate = 3
+duration = "60d"
+concurrent = 10
+schemas = ["test_1", "test_2"]
+op-weight = [2, 2, 1, 0]
+
+[db-config.mysql]
+host = "127.0.0.1"
+port = 3306
+user = "root"
+password = "123456"
+enabled = true
