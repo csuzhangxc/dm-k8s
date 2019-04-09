@@ -1,0 +1,334 @@
+---
+name: test
+task-mode: all
+is-sharding: true
+meta-schema: "dm_meta"
+remove-meta: false
+enable-heartbeat: true
+# heartbeat-update-interval: 1  # interval to do heartbeat and save timestamp, default 1s
+# heartbeat-report-interval: 10 # interval to report time lap to prometheus, default 10s
+# timezone: "Asia/Shanghai" # target database timezone, all timestamp event in binlog will translate to format time based on this timezone, default use local timezone
+
+target-database:
+  host: ""
+  port: 4000
+  user: "root"
+  password: ""
+
+mysql-instances:
+  -
+    source-id: "dm-worker-0"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-0"]
+    black-white-list:  "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-1"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-1"]
+    black-white-list:  "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-2"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-2"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-3"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-3"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-4"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-4"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-5"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-5"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-6"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-6"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-7"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-7"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-8"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-8"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-9"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-9"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-10"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-10"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-11"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-11"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-12"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-12"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-13"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-13"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-14"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-14"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+  -
+    source-id: "dm-worker-15"
+    route-rules: ["user-route-rules-schema", "user-route-rules"]
+    filter-rules: ["user-filter-1"]
+    column-mapping-rules: ["instance-15"]
+    black-white-list: "instance"
+    mydumper-config-name: "global"   # ref `mydumpers` config
+    loader-config-name: "global"    # ref `loaders` config
+    syncer-config-name: "global"    # ref `syncers` config
+
+routes:                      # schema/table route mapping
+  user-route-rules-schema:
+    schema-pattern: "test_*"
+    target-schema: "test"
+  user-route-rules:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    target-schema: "test"
+    target-table: "t"
+
+filters:                     # filter rules, mysql instance can ref rules in it
+  user-filter-1:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    events: ["truncate table", "drop table"]  # ignore truncate/drop table ddl
+    action: Ignore
+
+black-white-list:
+  instance:
+    do-dbs: ["~^test.*", "do"]
+    ignore-dbs: ["mysql", "ignored"]
+    do-tables:
+    - db-name: "~^test.*"
+      tbl-name: "~^t.*"
+
+column-mappings:             # column mapping rules, mysql instance can ref rules in it
+  instance-0:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["0", "test_", "t_"]
+  instance-1:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["1", "test_", "t_"]
+  instance-2:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["2", "test_", "t_"]
+  instance-3:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["3", "test_", "t_"]
+  instance-4:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["4", "test_", "t_"]
+  instance-5:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["5", "test_", "t_"]
+  instance-6:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["6", "test_", "t_"]
+  instance-7:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["7", "test_", "t_"]
+  instance-8:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["8", "test_", "t_"]
+  instance-9:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["9", "test_", "t_"]
+  instance-10:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["10", "test_", "t_"]
+  instance-11:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["11", "test_", "t_"]
+  instance-12:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["12", "test_", "t_"]
+  instance-13:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["13", "test_", "t_"]
+  instance-14:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["14", "test_", "t_"]
+  instance-15:
+    schema-pattern: "test_*"
+    table-pattern: "t_*"
+    expression: "partition id"       # handle sharding partition id
+    source-column: "id"
+    target-column: "id"
+    arguments: ["15", "test_", "t_"]
+
+mydumpers:                   # mydumper process unit specific configs, mysql instance can ref one config in it
+  global:
+    mydumper-path: "./bin/mydumper"
+    threads: 4
+    chunk-filesize: 64
+    skip-tz-utc: true
+
+loaders:                     # loader process unit specific configs, mysql instance can ref one config in it
+  global:
+    pool-size: 16
+    dir: "./dumped_data"
+
+syncers:                     # syncer process unit specific configs, mysql instance can ref one config in it
+  global:
+    worker-count: 16
+    batch: 100
+    max-retry: 100
