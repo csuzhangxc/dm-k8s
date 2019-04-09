@@ -1,9 +1,9 @@
 # Data-Dam Configuration
 
 rate = 3
-duration = "60d"
+duration = "1440h"
 concurrent = 10
-schemas = ["test_1", "test_2"]
+schemas = ["test_1"]
 op-weight = [2, 2, 1, 0]
 
 [db-config.mysql]
