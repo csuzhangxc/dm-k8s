@@ -209,7 +209,6 @@ column-mappings:             # column mapping rules, mysql instance can ref rule
     source-column: "id"
     target-column: "id"
     arguments: ["0", "test_", "t_"]
-
   instance-1:
     schema-pattern: "test_*"
     table-pattern: "t_*"
