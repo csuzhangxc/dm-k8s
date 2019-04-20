@@ -1,0 +1,743 @@
+---
+name: test_case2
+task-mode: all
+is-sharding: true
+meta-schema: "dm_meta_test_case2"
+remove-meta: false
+enable-heartbeat: true
+# heartbeat-update-interval: 1  # interval to do heartbeat and save timestamp, default 1s
+# heartbeat-report-interval: 10 # interval to report time lap to prometheus, default 10s
+# timezone: "Asia/Shanghai" # target database timezone, all timestamp event in binlog will translate to format time based on this timezone, default use local timezone
+
+target-database:
+  host: ""
+  port: 4000
+  user: "root"
+  password: ""
+
+mysql-instances:
+  -
+    source-id: "dm-worker-1"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-2"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-3"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-4"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-5"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-6"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-7"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-8"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-9"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-10"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-11"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-12"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-13"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-14"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-15"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-16"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-17"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-18"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-19"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-20"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-21"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-22"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-23"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-24"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-25"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-26"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-27"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-28"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-29"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-30"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-31"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-32"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-33"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-34"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-35"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-36"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-37"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-38"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-39"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-40"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-41"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-42"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-43"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-44"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-45"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-46"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-47"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-48"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-49"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-50"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-51"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-52"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-53"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-54"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-55"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-56"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-57"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-58"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-59"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-60"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-61"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-62"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-63"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-64"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-65"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-66"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-67"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-68"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-69"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-70"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-71"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-72"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-73"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-74"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-75"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-76"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-77"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-78"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-79"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-80"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-81"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-82"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-83"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-84"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-85"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-86"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-87"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-88"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-89"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-90"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-91"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-92"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-93"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-94"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-95"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-96"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-97"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-98"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-99"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
+    source-id: "dm-worker-100"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+black-white-list:
+  instance:
+    do-dbs: ["~^test_case2.*"]
+    do-tables:
+    - db-name: "~^test_case2.*"
+      tbl-name: "~^t.*"
+
+mydumpers:                   # mydumper process unit specific configs, mysql instance can ref one config in it
+  global:
+    mydumper-path: "./bin/mydumper"
+    threads: 4
+    chunk-filesize: 64
+    skip-tz-utc: true
+    extra-args: "-x 'test_case2.*'"
+
+loaders:                     # loader process unit specific configs, mysql instance can ref one config in it
+  global:
+    pool-size: 16
+    dir: "./dumped_data"
+
+syncers:                     # syncer process unit specific configs, mysql instance can ref one config in it
+  global:
+    worker-count: 16
+    batch: 100
+    max-retry: 100
