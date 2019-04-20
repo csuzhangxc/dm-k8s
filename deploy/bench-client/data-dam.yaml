@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: data-dam
   serviceName: "data-dam"
-  replicas: 20
+  replicas: 100
   template:
     metadata:
       labels:

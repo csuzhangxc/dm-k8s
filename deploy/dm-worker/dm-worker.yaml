@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: dm-worker
   serviceName: "dm-worker"
-  replicas: 20
+  replicas: 100
   template:
     metadata:
       labels:
