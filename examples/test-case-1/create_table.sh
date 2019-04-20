@@ -1,7 +1,7 @@
 #!/bin/bash
 
 default_password=""
-namespace="dm-test"
+namespace="dm-test-2"
 schemas=( "test_1" "test_2" "test_3" "test_4" )
 tables=( "t_1" "t_2" "t_3" "t_4" "t_5" "t_6" )
 

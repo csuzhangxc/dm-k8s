@@ -4,7 +4,7 @@ global:
   evaluation_interval: 15s # How frequently to evaluate rules.
   # scrape_timeout is set to the global default (10s).
   external_labels:
-    cluster: 'dm-test-cluster'
+    cluster: 'dm-test-2-cluster'
     monitor: "prometheus"
 
 scrape_configs:

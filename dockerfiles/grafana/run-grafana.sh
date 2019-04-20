@@ -8,7 +8,7 @@ ipaddr=$(ip addr | grep "inet" | grep -v "127.0.0.1" | awk '{print $2}' | awk -F
 sed -i "s/^domain = .*$/domain = ${ipaddr}/" $config
 
 echo "{
-    "name":"dm-test-cluster",
+    "name":"dm-test-2-cluster",
     "type":"prometheus",
     "access":"proxy",
     "url":"http://${PROMETHEUS_IP}:9090/",
