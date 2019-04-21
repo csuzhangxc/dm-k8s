@@ -17,6 +17,13 @@ target-database:
 
 mysql-instances:
   -
+    source-id: "dm-worker-0"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+  -
     source-id: "dm-worker-1"
     black-white-list:  "instance"
     mydumper-config-name: "global"
@@ -704,13 +711,6 @@ mysql-instances:
 
   -
     source-id: "dm-worker-99"
-    black-white-list:  "instance"
-    mydumper-config-name: "global"
-    loader-config-name: "global"
-    syncer-config-name: "global"
-
-  -
-    source-id: "dm-worker-100"
     black-white-list:  "instance"
     mydumper-config-name: "global"
     loader-config-name: "global"

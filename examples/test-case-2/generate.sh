@@ -13,6 +13,6 @@ EOF
     printf '  %s\n\n' "$line"
 }
 
-for i in $(seq 100); do
+for i in $(seq 0 99); do
     assaemble_config $i
 done
