@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: data-dam
-        image: hub.pingcap.net/dm/data-dam:v0.1.2-rc2
+        image: hub.pingcap.net/dm/data-dam:v0.1.2-rc6
         command: ["/home/tidb/bin/run-data-dam.sh"]
         env:
         - name: MYSQL_IPS

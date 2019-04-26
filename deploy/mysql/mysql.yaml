@@ -25,20 +25,9 @@ spec:
         - containerPort: 3306
           name: mysql
         volumeMounts:
-        - name: mysqldata
-          mountPath: /var/lib/mysql
         - name: mysql-config-volume
           mountPath: /etc/mysql/conf.d
       volumes:
       - name: mysql-config-volume
         configMap:
           name: mysql-custom-config
-  volumeClaimTemplates:
-  - metadata:
-      name: mysqldata
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 200Gi
-      storageClassName: local-storage

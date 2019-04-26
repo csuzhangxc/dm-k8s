@@ -1,6 +1,6 @@
 # Data-Dam Configuration
 
-rate = 50
+rate = 10
 duration = "1440h"
 concurrent = 10
 schemas = ["test_1", "test_2", "test_3", "test_4"]
