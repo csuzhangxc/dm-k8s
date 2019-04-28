@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: dm-master
-        image: hub.pingcap.net/dm/dm-master:v1.0.0
+        image: hub.pingcap.net/dm/dm-master:v20190428
         ports:
         - containerPort: 8261
           name: dm-master
