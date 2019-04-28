@@ -53,7 +53,7 @@ for instance in $instances; do
     ip=${arr[1]}
     for schema in "${schemas[@]}"; do
         for table in "${tables[@]}"; do
-            create_table $ip "$schema_$index" $table
+            create_table $ip "$schema" $table
         done
     done
 done
