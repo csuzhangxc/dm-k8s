@@ -12,4 +12,4 @@
 
 ## Regulation
 
-* default namespace is `dm-test`
+* default namespace is `dm-test-3`

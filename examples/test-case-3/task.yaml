@@ -1,0 +1,50 @@
+---
+name: test_case3_INDEX
+task-mode: all
+is-sharding: true
+meta-schema: "dm_meta_test_case3"
+remove-meta: false
+enable-heartbeat: true
+# heartbeat-update-interval: 1  # interval to do heartbeat and save timestamp, default 1s
+# heartbeat-report-interval: 10 # interval to report time lap to prometheus, default 10s
+# timezone: "Asia/Shanghai" # target database timezone, all timestamp event in binlog will translate to format time based on this timezone, default use local timezone
+
+target-database:
+  host: ""
+  port: 4000
+  user: "root"
+  password: ""
+
+mysql-instances:
+  -
+    source-id: "dm-worker-0"
+    black-white-list:  "instance"
+    mydumper-config-name: "global"
+    loader-config-name: "global"
+    syncer-config-name: "global"
+
+black-white-list:
+  instance:
+    do-dbs: ["test_case3_INDEX"]
+    do-tables:
+    - db-name: "test_case3_INDEX"
+      tbl-name: "~^t.*"
+
+mydumpers:                   # mydumper process unit specific configs, mysql instance can ref one config in it
+  global:
+    mydumper-path: "./bin/mydumper"
+    threads: 4
+    chunk-filesize: 64
+    skip-tz-utc: true
+    extra-args: "-B test_case3_INDEX"
+
+loaders:                     # loader process unit specific configs, mysql instance can ref one config in it
+  global:
+    pool-size: 16
+    dir: "./dumped_data_INDEX"
+
+syncers:                     # syncer process unit specific configs, mysql instance can ref one config in it
+  global:
+    worker-count: 16
+    batch: 100
+    max-retry: 100

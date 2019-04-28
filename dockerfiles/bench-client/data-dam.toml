@@ -3,7 +3,7 @@
 rate = 10
 duration = "1440h"
 concurrent = 10
-schemas = ["test_1", "test_2", "test_3", "test_4"]
+schemas = ["test_case3_indexPLC"]
 op-weight = [2, 2, 1, 0]
 
 [db-config.mysql]

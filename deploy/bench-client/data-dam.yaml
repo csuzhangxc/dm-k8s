@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: data-dam
-  namespace: dm-test
+  namespace: dm-test-3
 spec:
   selector:
     matchLabels:
       app: data-dam
   serviceName: "data-dam"
-  replicas: 20
+  replicas: 50
   template:
     metadata:
       labels:
@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: data-dam
-        image: hub.pingcap.net/dm/data-dam:v0.1.2-rc6
+        image: hub.pingcap.net/dm/data-dam:v0.1.2-rc7
         command: ["/home/tidb/bin/run-data-dam.sh"]
         env:
         - name: MYSQL_IPS
