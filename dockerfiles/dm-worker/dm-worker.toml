@@ -36,7 +36,7 @@ user = "root"
 password = "VjX8cEeTX+qcvZ3bPaO4h0C80pe/1aU="
 
 # relay log purge strategy
-# [purge]
-# interval = 3600
-# expires = 24
-# remain-space = 15
+[purge]
+interval = 3600
+expires = 12
+remain-space = 15
