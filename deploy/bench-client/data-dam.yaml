@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: data-dam
-  namespace: dm-test-3
+  namespace: dm-test-4
 spec:
   selector:
     matchLabels:

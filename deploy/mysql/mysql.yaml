@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql
-  namespace: dm-test-3
+  namespace: dm-test-4
 spec:
   selector:
     matchLabels:
       app: mysql
   serviceName: "mysql"
-  replicas: 1
+  replicas: 10
   template:
     metadata:
       labels:

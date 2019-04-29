@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: dm-worker
-  namespace: dm-test-3
+  namespace: dm-test-4
 spec:
   selector:
     matchLabels:
       app: dm-worker
   serviceName: "dm-worker"
-  replicas: 1
+  replicas: 10
   template:
     metadata:
       labels:

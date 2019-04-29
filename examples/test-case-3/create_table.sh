@@ -1,7 +1,7 @@
 #!/bin/bash
 
 default_password=""
-namespace="dm-test-3"
+namespace="dm-test-4"
 schemas=()
 for i in $(seq 0 49); do
     schemas+=("test_case3_$i")
