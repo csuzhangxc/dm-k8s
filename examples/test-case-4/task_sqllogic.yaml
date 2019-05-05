@@ -36,7 +36,7 @@ mydumpers:                   # mydumper process unit specific configs, mysql ins
     threads: 4
     chunk-filesize: 64
     skip-tz-utc: true
-    extra-args: "-B test_case4_sqllogic"
+    extra-args: "-x 'sqllogic_test_.*'"
 
 loaders:                     # loader process unit specific configs, mysql instance can ref one config in it
   global:
